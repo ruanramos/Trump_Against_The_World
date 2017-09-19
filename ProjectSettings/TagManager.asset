@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - FastEnemy
+  - GuitarEnemy
+  - Trump
+  - America
+  - Wall
+  - PutinButton
+  - MuslimWomanEnemy
+  - AmericanMan
+  - Obama
+  - Kim
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - In Front
+  - At Back
+  - Walls
+  - American Man
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: At Back
+    uniqueID: 1552129981
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Walls
+    uniqueID: 2949874751
+    locked: 0
+  - name: In Front
+    uniqueID: 642461709
+    locked: 0
