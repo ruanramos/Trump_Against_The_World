@@ -95,7 +95,7 @@ public class TrumpScript : MonoBehaviour {
         }
         if (shouldInstantiateWall && gameController.GetComponent<GameControllerScript>().gold >= gameController.GetComponent<GameControllerScript>().wallCost)
         {
-            GameObject wall = Instantiate(prefabWall, Camera.main.ScreenToWorldPoint(Input.mousePosition), transform.rotation) as GameObject;
+            GameObject wall = Instantiate(prefabWall, Camera.main.ScreenToWorldPoint(new Vector3(248, 328, Input.mousePosition.z)), transform.rotation) as GameObject;
         }
     }
 

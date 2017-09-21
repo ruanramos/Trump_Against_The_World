@@ -12,5 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/PreGameScene.unity
     guid: 196a2762710b6394898bd860b5fe580f
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 8fc55a953305fb84dbe1347a0ba1d86d
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: eb95d32b767806047b1e1d649eeace77
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: 334e227801cb5f245a3fa813699b9853

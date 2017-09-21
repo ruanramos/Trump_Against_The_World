@@ -45,6 +45,11 @@ public class GameControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Screen.fullScreen)
+        {
+            Screen.SetResolution((int)Screen.width, (int)Screen.height, true);
+        }
+
         time += Time.deltaTime;
         if (jobsStolen >= maxJobsStolen)
         {

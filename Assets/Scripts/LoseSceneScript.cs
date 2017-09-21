@@ -38,6 +38,14 @@ public class LoseSceneScript : MonoBehaviour {
         playAgainButton.GetComponent<Button>().image.enabled = false;
     }
 
+    private void Update()
+    {
+        if (Screen.fullScreen)
+        {
+            Screen.SetResolution((int)Screen.width, (int)Screen.height, true);
+        }
+    }
+
     public void showButtons()
     {
         menuButton.GetComponentInChildren<Text>().enabled = true;

@@ -75,7 +75,7 @@ public class SpawnnerScript : MonoBehaviour {
 
         // calcula posição do spawn e a probabilidade de spawnar cada tipo de inimigo
         if (shouldSpawn) {
-            float xPosition = Random.Range(-2.3f, 2.3f);
+            float xPosition = Random.Range(-1.9f, 1.9f);
             float yPosition = Random.Range(5.5f, 9f);
             Vector3 position = new Vector3(xPosition, yPosition, 0);
             float enemyTypeNumber = Random.Range(0f, 1f);

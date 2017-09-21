@@ -20,6 +20,11 @@ public class TutorialControllerScript : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        if (Screen.fullScreen)
+        {
+            Screen.SetResolution(Screen.width, Screen.height, true);
+        }
+
         if (cameraMain.GetComponent<TutorialCameraScript>().position == 0)
         {
             backButton.GetComponent<Button>().enabled = false;
