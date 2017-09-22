@@ -30,7 +30,12 @@ public class ChangeScene : MonoBehaviour {
 
     public void loadScene(string s)
     {
-        if (SceneManager.GetActiveScene().name == "PreGameScene")
+        if (SceneManager.GetActiveScene().name == "LoseScene")
+        {
+            GameObject audios = GameObject.Find("AudiosLoseScene");
+            audios.GetComponent<AudioSource>().Stop();
+        }
+        else if (SceneManager.GetActiveScene().name == "PreGameScene")
         {
             GameObject audios = GameObject.Find("Background");
             audios.GetComponent<AudioSource>().Stop();

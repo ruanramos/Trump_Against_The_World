@@ -23,10 +23,12 @@ public class GameControllerScript : MonoBehaviour
     public float time = 0;
 
     float timeToFinish = 0;
+    float alpha = 0;
 
     GameObject audioController;
 
     bool shouldPlay = true;
+    public bool shouldEnd = false;
 
     // if changing, change on WallScript, ButtonsScript, GameControllerScript, TrumpScript
     public int putinCost = 2000;
@@ -52,15 +54,31 @@ public class GameControllerScript : MonoBehaviour
             Screen.SetResolution((int)Screen.width, (int)Screen.height, true);
         }
 
+        if(shouldEnd)
+        {
+            GameObject.Find("EndButton").GetComponentInChildren<Text>().enabled = true;
+            GameObject.Find("EndButton").GetComponent<Button>().enabled = true;
+            GameObject.Find("EndButton").GetComponent<Button>().image.enabled = true;
+        }
+
         time += Time.deltaTime;
         if (jobsStolen >= maxJobsStolen)
         {
+            GameObject.Find("Panel").GetComponent<Image>().enabled = true;
             PlayerPrefs.SetInt("score", this.GetComponent<SpawnnerScript>().score);
             if (PlayerPrefs.GetInt("score") > PlayerPrefs.GetInt("highscore"))
             {
                 PlayerPrefs.SetInt("highscore", this.GetComponent<SpawnnerScript>().score);
             }
             GameObject.Find("GameController").GetComponent<AudioSource>().volume -= 0.02f * Time.deltaTime;
+            GameObject.Find("Audios").GetComponent<AudioSource>().volume -= 0.25f * Time.deltaTime;
+            GameObject.Find("PutinButton").GetComponent<Button>().interactable = false;
+            GameObject.Find("WallButton").GetComponent<Button>().interactable = false;
+
+            alpha += 0.01f;
+            Color color = new Vector4(0, 0, 0, alpha);
+
+            GameObject.Find("Panel").GetComponent<Image>().color = color;
 
             GameObject[] fastEnemies = GameObject.FindGameObjectsWithTag("FastEnemy");
             GameObject[] guitarEnemies = GameObject.FindGameObjectsWithTag("GuitarEnemy");
@@ -97,7 +115,7 @@ public class GameControllerScript : MonoBehaviour
                 obamas[i].GetComponent<ObamaScript>().velocity = .5f;
                 obamas[i].GetComponent<Collider2D>().enabled = false;
             }
-            for (int i = 0; i < obamas.Length; i++)
+            for (int i = 0; i < kims.Length; i++)
             {
                 kims[i].GetComponent<KimScript>().velocity = .5f;
                 kims[i].GetComponent<Collider2D>().enabled = false;
@@ -105,7 +123,8 @@ public class GameControllerScript : MonoBehaviour
             timeToFinish += Time.deltaTime;
             if (timeToFinish >= 3)
             {
-                SceneManager.LoadScene("LoseScene");
+                shouldEnd = true;
+                this.GetComponent<SpawnnerScript>().shouldSpawn = false;
             }
             //StartCoroutine(LoadAsync("LoseScene"));
         }

@@ -68,14 +68,14 @@ public class LoseSceneScript : MonoBehaviour {
         Destroy(GameObject.Find("ScoreText"));
         Destroy(GameObject.Find("HighscoreText"));
         GameObject.Find("Backgroud").GetComponent<SpriteRenderer>().color = Color.black;
-        finalText.GetComponent<Text>().text = "-Make Immigrants Already In Your Community Feel Welcome\n" +
-        "- Sign Up To Help Refugees In Your Community\n" +
-        "- Spread The Word About Immigrants' & Refugees' Rights\n" +
-        "- Offer Your Legal Or Translation Skills\n" +
-        "- Provide Necessities To Those in need\n" +
-        "- Fund Organizations Helping Immigrants\n" +
-        "- Be Human, help humans\n" +
-        "- List of Organizations to help:\n\n" +
+        finalText.GetComponent<Text>().text = "-  Make Immigrants Already In Your Community Feel Welcome\n" +
+        "-  Sign Up To Help Refugees In Your Community\n" +
+        "-  Spread The Word About Immigrants' & Refugees' Rights\n" +
+        "-  Offer Your Legal Or Translation Skills\n" +
+        "-  Provide Necessities To Those in need\n" +
+        "-  Fund Organizations Helping Immigrants\n" +
+        "-  Be Human, help humans\n" +
+        "-  List of Organizations to help:\n\n" +
         "-->Unrwausa\n" +
         "-->Black Alliance for Just Immigration\n" +
         "-->Council on American - Islamic Relations\n" +

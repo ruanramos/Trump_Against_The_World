@@ -43,6 +43,7 @@ public class AmericaScript : MonoBehaviour {
     {
         if (collision.tag == "GuitarEnemy" || collision.tag == "FastEnemy" || collision.tag == "MuslimWomanEnemy")
         {
+            Handheld.Vibrate();
             trump.GetComponent<TrumpScript>().getMad = true;
             collision.GetComponent<CapsuleCollider2D>().enabled = false;
             Destroy(collision.gameObject);
@@ -55,6 +56,7 @@ public class AmericaScript : MonoBehaviour {
         }
         else if (collision.tag == "Obama")
         {
+            Handheld.Vibrate();
             collisionTime = Time.time;
             buttonsDisabled = true;
             putinButton.GetComponent<Button>().interactable = false;
@@ -70,6 +72,7 @@ public class AmericaScript : MonoBehaviour {
         }
         else if (collision.tag == "Kim")
         {
+            Handheld.Vibrate();
             collision.GetComponent<KimScript>().velocity *= 2.5f;
             collision.GetComponent<Collider2D>().enabled = false;
 

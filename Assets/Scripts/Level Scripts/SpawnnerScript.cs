@@ -8,7 +8,7 @@ public class SpawnnerScript : MonoBehaviour {
     public int level;
     private int numberOfEnemies;
     private float time;
-    private bool shouldSpawn = false;
+    public bool shouldSpawn = false;
     public int score;
 
     public float[] timeOfSpawnOnLevels = {2f, 1.9f, 1.8f, 1.7f, 1.6f, 1.5f, 1.4f, 1.3f, 1.2f, 1.1f, 1.0f, 0.9f, 0.8f, 0.7f, 0.6f};
@@ -55,7 +55,7 @@ public class SpawnnerScript : MonoBehaviour {
         if (canStart) time += Time.deltaTime;
         level = (score / 500) + 1;
 
-        if (trump.GetComponent<TrumpScript>().putinPlaying)
+        if (trump.GetComponent<TrumpScript>().putinPlaying || this.GetComponent<GameControllerScript>().shouldEnd)
         {
             shouldSpawn = false;
         }

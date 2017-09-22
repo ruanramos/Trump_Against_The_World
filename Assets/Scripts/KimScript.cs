@@ -30,7 +30,6 @@ public class KimScript : MonoBehaviour {
     {
         GameObject.Find("Particle System").transform.position = this.transform.position;
         GameObject.Find("Particle System").GetComponent<ParticleSystem>().Play();
-        Handheld.Vibrate();
         Destroy(this.gameObject);
         trump.GetComponent<TrumpScript>().getHappy = true;
         gameController.GetComponent<GameControllerScript>().gold += kimGold;

@@ -33,7 +33,6 @@ public class ObamaScript : MonoBehaviour {
     {
         GameObject.Find("Particle System").transform.position = this.transform.position;
         GameObject.Find("Particle System").GetComponent<ParticleSystem>().Play();
-        Handheld.Vibrate();
         trump.GetComponent<TrumpScript>().getHappy = true;
         Destroy(this.gameObject);
         gameController.GetComponent<GameControllerScript>().obamasKilled++;

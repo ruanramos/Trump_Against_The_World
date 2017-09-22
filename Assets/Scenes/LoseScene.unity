@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 52116146}
   - component: {fileID: 52116145}
   - component: {fileID: 52116147}
+  - component: {fileID: 52116148}
   m_Layer: 0
   m_Name: Backgroud
   m_TagString: Untagged
@@ -190,6 +191,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalText: {fileID: 510957516}
+--- !u!114 &52116148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52116144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ffee1a643117a4e978053b8440c5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introAudio: {fileID: 0}
+  trump: {fileID: 0}
 --- !u!1 &87948827
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +455,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954940992}
+      - m_Target: {fileID: 52116148}
         m_MethodName: loadScene
         m_Mode: 5
         m_Arguments:
@@ -544,7 +558,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 53
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 69
@@ -1529,7 +1543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954940992}
+      - m_Target: {fileID: 52116148}
         m_MethodName: loadScene
         m_Mode: 5
         m_Arguments:
@@ -1658,7 +1672,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1954940991}
   - component: {fileID: 1954940990}
-  - component: {fileID: 1954940992}
   m_Layer: 0
   m_Name: LoseImage
   m_TagString: Untagged
@@ -1719,16 +1732,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1954940992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1954940989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20ffee1a643117a4e978053b8440c5ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  introAudio: {fileID: 0}
-  trump: {fileID: 0}
