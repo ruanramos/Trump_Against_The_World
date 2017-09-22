@@ -27,6 +27,9 @@ public class AmericanMan : MonoBehaviour {
 
     void OnMouseDown()
     {
+        GameObject.Find("Particle System2").transform.position = this.transform.position;
+        GameObject.Find("Particle System2").GetComponent<ParticleSystem>().Play();
+        Handheld.Vibrate();
         Destroy(this.gameObject);
         trump1.GetComponent<TrumpScript>().getMad = true;
         gameController1.GetComponent<GameControllerScript>().gold -= punishment;

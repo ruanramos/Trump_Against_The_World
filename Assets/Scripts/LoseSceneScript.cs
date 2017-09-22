@@ -10,6 +10,7 @@ public class LoseSceneScript : MonoBehaviour {
     GameObject menuButton;
     GameObject scoreText;
     GameObject highscoreText;
+    public GameObject finalText;
 
     // Use this for initialization
     void Start () {
@@ -59,5 +60,33 @@ public class LoseSceneScript : MonoBehaviour {
         continueButton.GetComponentInChildren<Text>().enabled = false;
         continueButton.GetComponent<Button>().enabled = false;
         continueButton.GetComponent<Button>().image.enabled = false;
+
+        
+        Destroy(GameObject.Find("trumpFree_05"));
+        Destroy(GameObject.Find("LoseImage"));
+        Destroy(GameObject.Find("Text"));
+        Destroy(GameObject.Find("ScoreText"));
+        Destroy(GameObject.Find("HighscoreText"));
+        GameObject.Find("Backgroud").GetComponent<SpriteRenderer>().color = Color.black;
+        finalText.GetComponent<Text>().text = "-Make Immigrants Already In Your Community Feel Welcome\n" +
+        "- Sign Up To Help Refugees In Your Community\n" +
+        "- Spread The Word About Immigrants' & Refugees' Rights\n" +
+        "- Offer Your Legal Or Translation Skills\n" +
+        "- Provide Necessities To Those in need\n" +
+        "- Fund Organizations Helping Immigrants\n" +
+        "- Be Human, help humans\n" +
+        "- List of Organizations to help:\n\n" +
+        "-->Unrwausa\n" +
+        "-->Black Alliance for Just Immigration\n" +
+        "-->Council on American - Islamic Relations\n" +
+        "-->CUNY CLEAR\n" +
+        "-->Families for Freedom\n" +
+        "-->Immigrant Defense Project\n" +
+        "-->Immigrant Legal Resource Center(ILRC)\n" +
+        "-->International Rescue Committee\n" +
+        "-->The International Refugee Assistance Project\n" +
+        "-->Mariposas Sin Fronteras\n" +
+        "-->MPower Change\n" +
+        "-->National Immigration Law Center;\n";
     }
 }

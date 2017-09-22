@@ -9,6 +9,7 @@ public class TutorialControllerScript : MonoBehaviour {
     GameObject backButton;
     GameObject menuButton;
     GameObject cameraMain;
+    Transform kimPosition;
 
     // Use this for initialization
     void Start () {
@@ -16,10 +17,24 @@ public class TutorialControllerScript : MonoBehaviour {
         backButton = GameObject.Find("BotãoBack");
         menuButton = GameObject.Find("BotãoMenu");
         cameraMain = GameObject.Find("Main Camera");
+        kimPosition = GameObject.Find("Kim").transform;
     }
 
     private void FixedUpdate()
     {
+
+        if (Camera.main.transform.position.x == 50)
+        {
+            kimPosition.transform.position += Vector3.down / 8;
+            if (kimPosition.position.y < -4.7f)
+            {
+                kimPosition.transform.position = new Vector3(kimPosition.transform.position.x, 5.15f, kimPosition.transform.position.z);
+            }
+        }
+        else
+        {
+            kimPosition.transform.position = new Vector3(kimPosition.transform.position.x, 5.15f, kimPosition.transform.position.z);
+        }
         if (Screen.fullScreen)
         {
             Screen.SetResolution(Screen.width, Screen.height, true);

@@ -57,12 +57,12 @@ public class TrumpScript : MonoBehaviour {
             getMad = false;
         }
 
-        if (!putinPlaying)
+        if (!putinPlaying && gameController.GetComponent<GameControllerScript>().jobsStolen < gameController.GetComponent<GameControllerScript>().maxJobsStolen)
         {
             gameController.GetComponent<AudioSource>().volume = 0.054f;
             time = 0;
         }
-        else
+        else if (!putinPlaying)
         {
             GetComponent<SpriteRenderer>().sprite = happyTrump;
             time += Time.deltaTime;

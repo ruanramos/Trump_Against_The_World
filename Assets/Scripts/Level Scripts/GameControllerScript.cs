@@ -16,11 +16,13 @@ public class GameControllerScript : MonoBehaviour
     public int kimsKilled = 0;
 
     public int jobsStolen = 0;
-    private int maxJobsStolen = 10;
+    public int maxJobsStolen = 10;
 
     int numberNeededToPlayQuote = 5;
 
     public float time = 0;
+
+    float timeToFinish = 0;
 
     GameObject audioController;
 
@@ -58,7 +60,54 @@ public class GameControllerScript : MonoBehaviour
             {
                 PlayerPrefs.SetInt("highscore", this.GetComponent<SpawnnerScript>().score);
             }
-            StartCoroutine(LoadAsync("LoseScene"));
+            GameObject.Find("GameController").GetComponent<AudioSource>().volume -= 0.02f * Time.deltaTime;
+
+            GameObject[] fastEnemies = GameObject.FindGameObjectsWithTag("FastEnemy");
+            GameObject[] guitarEnemies = GameObject.FindGameObjectsWithTag("GuitarEnemy");
+            GameObject[] muslimWomanEnemies = GameObject.FindGameObjectsWithTag("MuslimWomanEnemy");
+            GameObject[] americanMen = GameObject.FindGameObjectsWithTag("AmericanMan");
+            GameObject[] obamas = GameObject.FindGameObjectsWithTag("Obama");
+            GameObject[] kims  = GameObject.FindGameObjectsWithTag("Kim");
+
+            for (int i = 0; i < fastEnemies.Length; i++)
+            {
+                fastEnemies[i].GetComponent<MexicanFastScript>().velocity = .5f;
+                fastEnemies[i].GetComponent<Collider2D>().enabled = false;
+            }
+            for (int i = 0; i < guitarEnemies.Length; i++)
+            {
+                guitarEnemies[i].GetComponent<MexicanGuitarScript>().velocity1 = .5f;
+                guitarEnemies[i].GetComponent<Collider2D>().enabled = false;
+            }
+
+            for (int i = 0; i < muslimWomanEnemies.Length; i++)
+            {
+                muslimWomanEnemies[i].GetComponent<MuslimWomanScript>().velocity = .5f;
+                muslimWomanEnemies[i].GetComponent<Collider2D>().enabled = false;
+            }
+
+            for (int i = 0; i < americanMen.Length; i++)
+            {
+                americanMen[i].GetComponent<AmericanMan>().velocity1 = .5f;
+                americanMen[i].GetComponent<Collider2D>().enabled = false;
+            }
+
+            for (int i = 0; i < obamas.Length; i++)
+            {
+                obamas[i].GetComponent<ObamaScript>().velocity = .5f;
+                obamas[i].GetComponent<Collider2D>().enabled = false;
+            }
+            for (int i = 0; i < obamas.Length; i++)
+            {
+                kims[i].GetComponent<KimScript>().velocity = .5f;
+                kims[i].GetComponent<Collider2D>().enabled = false;
+            }
+            timeToFinish += Time.deltaTime;
+            if (timeToFinish >= 3)
+            {
+                SceneManager.LoadScene("LoseScene");
+            }
+            //StartCoroutine(LoadAsync("LoseScene"));
         }
 
         if (gold < 0)
@@ -86,6 +135,7 @@ public class GameControllerScript : MonoBehaviour
         }
     }
 
+    
     IEnumerator LoadAsync(string s)
     {
         GameObject audios = GameObject.Find("Audios");
@@ -120,4 +170,5 @@ public class GameControllerScript : MonoBehaviour
             yield return null;
         }
     }
+    
 }

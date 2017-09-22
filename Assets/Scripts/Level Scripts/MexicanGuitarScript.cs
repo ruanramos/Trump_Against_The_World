@@ -28,6 +28,9 @@ public class MexicanGuitarScript : MonoBehaviour
 
     void OnMouseDown()
     {
+        GameObject.Find("Particle System").transform.position = this.transform.position;
+        GameObject.Find("Particle System").GetComponent<ParticleSystem>().Play();
+        Handheld.Vibrate();
         Destroy(this.gameObject);
         trump1.GetComponent<TrumpScript>().getHappy = true;
         gameController1.GetComponent<GameControllerScript>().gold += guitarEnemyGold;

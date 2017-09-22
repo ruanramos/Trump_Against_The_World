@@ -81,7 +81,9 @@ public class SpawnnerScript : MonoBehaviour {
         if (shouldSpawn) {
             float xPosition = Random.Range(-1.9f, 1.9f);
             float yPosition = Random.Range(5.5f, 9f);
-            Vector3 position = new Vector3(xPosition, yPosition, 0);
+            Vector3 position0 = new Vector3(xPosition, yPosition, 0);
+            Vector3 position1 = new Vector3(xPosition, yPosition, -1);
+            Vector3 position2 = new Vector3(xPosition, yPosition, -2);
             float enemyTypeNumber = Random.Range(0f, 1f);
 
             // aqui ele dá a porcentagem de cada tipo de inimigo dependendo do level
@@ -89,17 +91,17 @@ public class SpawnnerScript : MonoBehaviour {
             {
                 if (enemyTypeNumber >= 0.6)
                 {
-                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.1)
                 {
-                    GameObject enemy = Instantiate(prefabGuitarEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabGuitarEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else
                 {
-                    GameObject enemy = Instantiate(prefabAmericanMan, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabAmericanMan, position0, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
             }
@@ -108,23 +110,23 @@ public class SpawnnerScript : MonoBehaviour {
             {
                 if (enemyTypeNumber >= 0.7)
                 {
-                    GameObject enemy = Instantiate(prefabFastEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabFastEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.5)
                 {
-                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 
                 else if (enemyTypeNumber >= 0.1)
                 {
-                    GameObject enemy = Instantiate(prefabGuitarEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabGuitarEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else
                 {
-                    GameObject enemy = Instantiate(prefabAmericanMan, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabAmericanMan, position0, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
             }
@@ -133,27 +135,27 @@ public class SpawnnerScript : MonoBehaviour {
             {
                 if (enemyTypeNumber >= 0.7)
                 {
-                    GameObject enemy = Instantiate(prefabFastEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabFastEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.6)
                 {
-                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.55)
                 {
-                    GameObject enemy = Instantiate(prefabObama, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabObama, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.1)
                 {
-                    GameObject enemy = Instantiate(prefabGuitarEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabGuitarEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else
                 {
-                    GameObject enemy = Instantiate(prefabAmericanMan, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabAmericanMan, position0, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
             }
@@ -162,32 +164,32 @@ public class SpawnnerScript : MonoBehaviour {
             {
                 if (enemyTypeNumber >= 0.65)
                 {
-                    GameObject enemy = Instantiate(prefabFastEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabFastEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.6)
                 {
-                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.55)
                 {
-                    GameObject enemy = Instantiate(prefabKim, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabKim, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.45)
                 {
-                    GameObject enemy = Instantiate(prefabObama, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabObama, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.1)
                 {
-                    GameObject enemy = Instantiate(prefabGuitarEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabGuitarEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else
                 {
-                    GameObject enemy = Instantiate(prefabAmericanMan, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabAmericanMan, position0, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
             }
@@ -195,32 +197,32 @@ public class SpawnnerScript : MonoBehaviour {
             {
                 if (enemyTypeNumber >= 0.65)
                 {
-                    GameObject enemy = Instantiate(prefabFastEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabFastEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.63)
                 {
-                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.5)
                 {
-                    GameObject enemy = Instantiate(prefabKim, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabKim, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.4)
                 {
-                    GameObject enemy = Instantiate(prefabObama, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabObama, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.1)
                 {
-                    GameObject enemy = Instantiate(prefabGuitarEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabGuitarEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else
                 {
-                    GameObject enemy = Instantiate(prefabAmericanMan, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabAmericanMan, position0, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
             }
@@ -228,32 +230,32 @@ public class SpawnnerScript : MonoBehaviour {
             {
                 if (enemyTypeNumber >= 0.55)
                 {
-                    GameObject enemy = Instantiate(prefabFastEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabFastEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.53)
                 {
-                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.4)
                 {
-                    GameObject enemy = Instantiate(prefabKim, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabKim, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.3)
                 {
-                    GameObject enemy = Instantiate(prefabObama, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabObama, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.1)
                 {
-                    GameObject enemy = Instantiate(prefabGuitarEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabGuitarEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else
                 {
-                    GameObject enemy = Instantiate(prefabAmericanMan, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabAmericanMan, position0, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
             }
@@ -261,32 +263,32 @@ public class SpawnnerScript : MonoBehaviour {
             {
                 if (enemyTypeNumber >= 0.6)
                 {
-                    GameObject enemy = Instantiate(prefabFastEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabFastEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.58)
                 {
-                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.45)
                 {
-                    GameObject enemy = Instantiate(prefabKim, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabKim, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.3)
                 {
-                    GameObject enemy = Instantiate(prefabObama, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabObama, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.1)
                 {
-                    GameObject enemy = Instantiate(prefabGuitarEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabGuitarEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else
                 {
-                    GameObject enemy = Instantiate(prefabAmericanMan, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabAmericanMan, position0, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
             }
@@ -294,32 +296,32 @@ public class SpawnnerScript : MonoBehaviour {
             {
                 if (enemyTypeNumber >= 0.6)
                 {
-                    GameObject enemy = Instantiate(prefabFastEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabFastEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.58)
                 {
-                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabMuslimWomanEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.45)
                 {
-                    GameObject enemy = Instantiate(prefabKim, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabKim, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.3)
                 {
-                    GameObject enemy = Instantiate(prefabObama, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabObama, position2, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else if (enemyTypeNumber >= 0.1)
                 {
-                    GameObject enemy = Instantiate(prefabGuitarEnemy, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabGuitarEnemy, position1, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
                 else
                 {
-                    GameObject enemy = Instantiate(prefabAmericanMan, position, transform.rotation) as GameObject;
+                    GameObject enemy = Instantiate(prefabAmericanMan, position0, transform.rotation) as GameObject;
                     shouldSpawn = false;
                 }
             }
