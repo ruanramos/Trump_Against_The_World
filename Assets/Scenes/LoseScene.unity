@@ -354,6 +354,7 @@ RectTransform:
   - {fileID: 1163292482}
   - {fileID: 206304864}
   - {fileID: 1823241135}
+  - {fileID: 1012712856}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -716,7 +717,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.486
   m_Pitch: 1
   Loop: 1
@@ -887,6 +888,135 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994943799}
+--- !u!1001 &1012712855
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 116373523}
+    m_Modifications:
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000076293945
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314531124201466, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.99998975
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.99998975
+      objectReference: {fileID: 0}
+    - target: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.99998975
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510243270206554, guid: 0dd59c30d39cefe4a978bcb31526d825, type: 2}
+      propertyPath: m_Name
+      value: LoadingScreen
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0dd59c30d39cefe4a978bcb31526d825, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &1012712856 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224862913573756154, guid: 0dd59c30d39cefe4a978bcb31526d825,
+    type: 2}
+  m_PrefabInternal: {fileID: 1012712855}
 --- !u!1 &1163292481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,14 +1454,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1954940992}
-        m_MethodName: backToMenu
-        m_Mode: 1
+        m_MethodName: loadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenuScene
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

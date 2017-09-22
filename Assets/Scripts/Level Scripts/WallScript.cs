@@ -32,7 +32,7 @@ public class WallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0) && !wallPositioned && transform.position.y > -2.5f)
+        if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && !wallPositioned && transform.position.y > -3.0f)
         {
             life = 5;
             GetComponent<BoxCollider2D>().enabled = true;
@@ -40,7 +40,7 @@ public class WallScript : MonoBehaviour {
             gameController.GetComponent<GameControllerScript>().gold -= gameController.GetComponent<GameControllerScript>().wallCost;
             shouldPlayQuoteAboutWall = true;
         }
-        else if (Input.GetMouseButtonDown(0) && !wallPositioned && transform.position.y < -2.5f)
+        else if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && !wallPositioned && transform.position.y < -2.5f)
         {
             Destroy(this.gameObject);
         }
@@ -48,13 +48,25 @@ public class WallScript : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        /*
         Vector3 mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         mousePosition.z = -9;
+        */
+        Vector3 position;
+        if (Input.touchCount > 0)
+        {
+            position = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            position.z = -9;
+        }
+        else
+        {
+            position = Camera.main.ScreenToWorldPoint(GameObject.Find("WallButton").transform.position);
+        }
         if (!wallPositioned)
         {
             GetComponent<WallScript>().life = 10;
-            transform.position = mousePosition;
+            transform.position = position;
             
             GetComponent<BoxCollider2D>().enabled = false;
         }

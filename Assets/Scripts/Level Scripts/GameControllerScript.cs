@@ -58,7 +58,7 @@ public class GameControllerScript : MonoBehaviour
             {
                 PlayerPrefs.SetInt("highscore", this.GetComponent<SpawnnerScript>().score);
             }
-            SceneManager.LoadScene("LoseScene");
+            StartCoroutine(LoadAsync("LoseScene"));
         }
 
         if (gold < 0)
@@ -69,7 +69,7 @@ public class GameControllerScript : MonoBehaviour
         goldText.GetComponent<Text>().text = "" + gold;
 
         // define if a general quote from trump should be played
-        if (time >= 7 && !audioController.GetComponent<AudioSource>().isPlaying)
+        if (time >= 13 && !audioController.GetComponent<AudioSource>().isPlaying)
         {
             shouldPlay = true;
             time = 0;
@@ -83,6 +83,41 @@ public class GameControllerScript : MonoBehaviour
             audioController.GetComponent<AudioSource>().clip = audioController.GetComponent<AudiosScript>().trumpQuotesInGeneral[clipToPlay];
             audioController.GetComponent<AudioSource>().Play();
             shouldPlay = false;
+        }
+    }
+
+    IEnumerator LoadAsync(string s)
+    {
+        GameObject audios = GameObject.Find("Audios");
+        GameObject controller = GameObject.Find("GameController");
+        audios.GetComponent<AudioSource>().Stop();
+        controller.GetComponent<AudioSource>().Stop();
+
+        GameObject loadingScreen = GameObject.Find("LoadingScreen");
+        Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
+        GameObject backgroundSlider = GameObject.Find("BackgroundSlider");
+        GameObject fill = GameObject.Find("Fill");
+        GameObject lisa = GameObject.Find("Lisa");
+        GameObject CptAmerica = GameObject.Find("CptAmerica");
+
+        lisa.GetComponent<Image>().enabled = true;
+        CptAmerica.GetComponent<Image>().enabled = true;
+        loadingScreen.GetComponent<Image>().enabled = true;
+        slider.GetComponent<Slider>().enabled = true;
+        fill.GetComponent<Image>().enabled = true;
+        backgroundSlider.GetComponent<Image>().enabled = true;
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(s);
+
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+
+            slider.value = progress;
+
+            yield return null;
         }
     }
 }

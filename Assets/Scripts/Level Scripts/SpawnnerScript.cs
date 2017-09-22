@@ -42,14 +42,18 @@ public class SpawnnerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (!canStart && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            canStart = true;
+            Destroy(GameObject.Find("StartText"));
+            Destroy(GameObject.Find("PanelStart"));
+        }
+    }
 
     private void FixedUpdate()
     {
         if (canStart) time += Time.deltaTime;
         level = (score / 500) + 1;
-        Debug.Log(1.5 * Mathf.Pow(0.95f, level));
 
         if (trump.GetComponent<TrumpScript>().putinPlaying)
         {

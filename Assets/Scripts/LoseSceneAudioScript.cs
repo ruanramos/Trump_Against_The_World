@@ -8,7 +8,12 @@ public class LoseSceneAudioScript : MonoBehaviour {
 	
     // Use this for initialization
 	void Awake () {
-		if (PlayerPrefs.GetInt("highscore") == PlayerPrefs.GetInt("score"))
+		
+	}
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("highscore") == PlayerPrefs.GetInt("score"))
         {
             this.GetComponent<AudioSource>().clip = audios[0];
             this.GetComponent<AudioSource>().Play();
@@ -18,10 +23,10 @@ public class LoseSceneAudioScript : MonoBehaviour {
             this.GetComponent<AudioSource>().clip = audios[1];
             this.GetComponent<AudioSource>().Play();
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

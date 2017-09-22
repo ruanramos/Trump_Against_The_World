@@ -83,8 +83,10 @@ public class TrumpScript : MonoBehaviour {
 
     public void instantiateWall()
     {
-        
+
         bool shouldInstantiateWall = true;
+        GameObject.Find("WallButton").GetComponent<Button>().interactable = false;
+        GameObject.Find("PutinButton").GetComponent<Button>().interactable = false;
         GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
         foreach(GameObject w in walls)
         {
@@ -95,8 +97,9 @@ public class TrumpScript : MonoBehaviour {
         }
         if (shouldInstantiateWall && gameController.GetComponent<GameControllerScript>().gold >= gameController.GetComponent<GameControllerScript>().wallCost)
         {
-            GameObject wall = Instantiate(prefabWall, Camera.main.ScreenToWorldPoint(new Vector3(248, 328, Input.mousePosition.z)), transform.rotation) as GameObject;
+            GameObject wall = Instantiate(prefabWall, Camera.main.ScreenToWorldPoint(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position)), transform.rotation) as GameObject;
         }
+
     }
 
     public void putinAttack()

@@ -12,11 +12,13 @@ public class PutinScript : MonoBehaviour {
     GameObject trump;
     GameObject lights;
     GameObject putinText;
+    GameObject audioController;
 
     // Use this for initialization
     void Start () {
         trump = GameObject.Find("Trump");
         putinText = GameObject.Find("PutinText");
+        audioController = GameObject.Find("Audios");
         time = 0;
         lights = GameObject.Find("LIGHTS");
         this.GetComponent<SpriteRenderer>().sprite = putinDancing[0];
@@ -27,8 +29,16 @@ public class PutinScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (trump.GetComponent<TrumpScript>().putinPlaying && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            trump.GetComponent<TrumpScript>().putinPlaying = false;
+            this.GetComponent<SpriteRenderer>().enabled = false;
+            lights.GetComponent<SpriteRenderer>().enabled = false;
+            putinText.GetComponent<Text>().enabled = false;
+            audioController.GetComponent<AudioSource>().Stop();
+            GameObject.Find("PutinPanel").GetComponent<Image>().enabled = false;
+        }
+    }
 
     private void FixedUpdate()
     {
