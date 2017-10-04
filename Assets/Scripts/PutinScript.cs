@@ -28,7 +28,8 @@ public class PutinScript : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (trump.GetComponent<TrumpScript>().putinPlaying && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             trump.GetComponent<TrumpScript>().putinPlaying = false;

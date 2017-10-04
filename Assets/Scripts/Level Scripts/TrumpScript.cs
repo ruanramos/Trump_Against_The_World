@@ -57,12 +57,14 @@ public class TrumpScript : MonoBehaviour {
             getMad = false;
         }
 
+        // make background music play if putin not playing or game not ended
         if (!putinPlaying && gameController.GetComponent<GameControllerScript>().jobsStolen < gameController.GetComponent<GameControllerScript>().maxJobsStolen)
         {
             gameController.GetComponent<AudioSource>().volume = 0.054f;
             time = 0;
         }
-        else if (!putinPlaying)
+
+        else if (putinPlaying)
         {
             GetComponent<SpriteRenderer>().sprite = happyTrump;
             time += Time.deltaTime;
@@ -108,6 +110,7 @@ public class TrumpScript : MonoBehaviour {
         GameObject[] guitarEnemies = GameObject.FindGameObjectsWithTag("GuitarEnemy");
         GameObject[] muslimWomanEnemies = GameObject.FindGameObjectsWithTag("MuslimWomanEnemy");
         GameObject[] kims = GameObject.FindGameObjectsWithTag("Kim");
+        GameObject[] obamas = GameObject.FindGameObjectsWithTag("Obama");
 
         if (!putinPlaying)
         {
@@ -125,6 +128,7 @@ public class TrumpScript : MonoBehaviour {
             Destroy(fastEnemies[i]);
             gameController.GetComponent<GameControllerScript>().fastMexicansKilled++;
         }
+
         for (int i = 0; i < guitarEnemies.Length; i++)
         {
             Destroy(guitarEnemies[i]);
@@ -141,6 +145,12 @@ public class TrumpScript : MonoBehaviour {
         {
             Destroy(kims[i]);
             gameController.GetComponent<GameControllerScript>().kimsKilled++;
+        }
+
+        for (int i = 0; i < obamas.Length; i++)
+        {
+            Destroy(obamas[i]);
+            gameController.GetComponent<GameControllerScript>().obamasKilled++;
         }
 
         gameController.GetComponent<GameControllerScript>().gold -= gameController.GetComponent<GameControllerScript>().putinCost;

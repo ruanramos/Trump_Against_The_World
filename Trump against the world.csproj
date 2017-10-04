@@ -81,13 +81,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AmericanMan.cs" />
     <Compile Include="Assets\Scripts\AudiosScript.cs" />
     <Compile Include="Assets\Scripts\ButtonsScript.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\FadingScript.cs" />
     <Compile Include="Assets\Scripts\KimScript.cs" />
     <Compile Include="Assets\Scripts\Level Scripts\AmericaScript.cs" />
+    <Compile Include="Assets\Scripts\Level Scripts\AmericanMan.cs" />
     <Compile Include="Assets\Scripts\Level Scripts\GameControllerScript.cs" />
     <Compile Include="Assets\Scripts\Level Scripts\MexicanFastScript.cs" />
     <Compile Include="Assets\Scripts\Level Scripts\MexicanGuitarScript.cs" />
