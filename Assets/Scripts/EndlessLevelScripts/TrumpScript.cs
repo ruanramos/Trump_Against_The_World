@@ -23,6 +23,9 @@ public class TrumpScript : MonoBehaviour {
     float time = 0;
     float lenghtAudioPutin;
 
+    public float putinEnteringTime;
+    public float delayPutin = 1.5f;
+
     // if changing, change on WallScript, ButtonsScript, GameControllerScript, TrumpScript
     //public int putinCost = 2000;
     //public int wallCost = 500;
@@ -83,27 +86,6 @@ public class TrumpScript : MonoBehaviour {
         GetComponent<SpriteRenderer>().sprite = confidentTrump;
     }
 
-    public void instantiateWall()
-    {
-
-        bool shouldInstantiateWall = true;
-        GameObject.Find("WallButton").GetComponent<Button>().interactable = false;
-        GameObject.Find("PutinButton").GetComponent<Button>().interactable = false;
-        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
-        foreach(GameObject w in walls)
-        {
-            if (!w.GetComponent<WallScript>().wallPositioned)
-            {
-                shouldInstantiateWall = false;
-            }
-        }
-        if (shouldInstantiateWall && gameController.GetComponent<GameControllerScript>().gold >= gameController.GetComponent<GameControllerScript>().wallCost)
-        {
-            GameObject wall = Instantiate(prefabWall, Camera.main.ScreenToWorldPoint(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position)), transform.rotation) as GameObject;
-        }
-
-    }
-
     public void putinAttack()
     {
         GameObject[] fastEnemies = GameObject.FindGameObjectsWithTag("FastEnemy");
@@ -120,6 +102,7 @@ public class TrumpScript : MonoBehaviour {
             audioController.GetComponent<AudioSource>().Play();
             putinPanel.GetComponent<Image>().enabled = true;
             putinPlaying = true;
+            putinEnteringTime = Time.time;
             gameController.GetComponent<AudioSource>().volume = 0;
         }
         

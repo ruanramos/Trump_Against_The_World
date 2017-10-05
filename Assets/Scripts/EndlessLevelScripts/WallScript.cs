@@ -24,23 +24,35 @@ public class WallScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         trump = GameObject.Find("Trump");
-        life = 5;
-        wallPositioned = false;
-        this.GetComponent<SpriteRenderer>().sprite = WallHeldByMouse;
+        life = 10;
         gameController = GameObject.Find("GameController");
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && !wallPositioned && transform.position.y > -3.0f)
+        Vector3 position;
+        if ((Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetTouch(0).phase == TouchPhase.Stationary)) && 
+            !wallPositioned && gameController.GetComponent<GameControllerScript>().gold >= 500)
+        {
+            position = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            position.z = 10;
+            this.transform.position = position;
+            
+        }
+        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && !wallPositioned && transform.position.y > -3.0f)
         {
             life = 5;
+            position = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+            position.z = 1;
+            this.transform.position = position;
             GetComponent<BoxCollider2D>().enabled = true;
             wallPositioned = true;
             gameController.GetComponent<GameControllerScript>().gold -= gameController.GetComponent<GameControllerScript>().wallCost;
             shouldPlayQuoteAboutWall = true;
         }
-        else if ((Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && !wallPositioned && transform.position.y < -2.5f)
+
+        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && !wallPositioned && transform.position.y < -2.5f)
         {
             Destroy(this.gameObject);
         }
@@ -48,29 +60,12 @@ public class WallScript : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        /*
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        mousePosition.z = -9;
-        */
-        Vector3 position;
-        if (Input.touchCount > 0)
-        {
-            position = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-            position.z = -9;
-        }
-        else
-        {
-            position = Camera.main.ScreenToWorldPoint(GameObject.Find("WallButton").transform.position);
-        }
         if (!wallPositioned)
         {
-            GetComponent<WallScript>().life = 10;
-            transform.position = position;
-            
             GetComponent<BoxCollider2D>().enabled = false;
         }
 
+        // set the sprite of the wall based on it's current life
         if (life == 6 || life == 5)
         {
             this.GetComponent<SpriteRenderer>().sprite = wall3Life;

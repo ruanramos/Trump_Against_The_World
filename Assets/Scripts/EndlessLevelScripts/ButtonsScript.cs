@@ -18,21 +18,12 @@ public class ButtonsScript : MonoBehaviour {
     void Start () {
         gameController = GameObject.Find("GameController");
         trump = GameObject.Find("Trump");
-
+        
         america = GameObject.Find("America");
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (gameController.GetComponent<GameControllerScript>().gold >= gameController.GetComponent<GameControllerScript>().wallCost && this.gameObject.name == "WallButton"
-            && !america.GetComponent<AmericaScript>().buttonsDisabled)
-        {
-            this.GetComponent<Button>().interactable = true;
-        }
-        else if (gameController.GetComponent<GameControllerScript>().gold < gameController.GetComponent<GameControllerScript>().wallCost && this.gameObject.name == "WallButton")
-        {
-            this.GetComponent<Button>().interactable = false;
-        }
         if (gameController.GetComponent<GameControllerScript>().gold >= gameController.GetComponent<GameControllerScript>().putinCost && this.gameObject.name == "PutinButton"
             && !america.GetComponent<AmericaScript>().buttonsDisabled)
         {
@@ -46,7 +37,6 @@ public class ButtonsScript : MonoBehaviour {
         if (trump.GetComponent<TrumpScript>().putinPlaying)
         {
             GameObject.Find("PutinButton").GetComponent<Button>().interactable = false;
-            GameObject.Find("WallButton").GetComponent<Button>().interactable = false;
         }
     }
 }

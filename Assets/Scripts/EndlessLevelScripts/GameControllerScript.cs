@@ -44,7 +44,7 @@ public class GameControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void FixedUpdate()
@@ -73,7 +73,6 @@ public class GameControllerScript : MonoBehaviour
             GameObject.Find("GameController").GetComponent<AudioSource>().volume -= 0.02f * Time.deltaTime;
             GameObject.Find("Audios").GetComponent<AudioSource>().volume -= 0.25f * Time.deltaTime;
             GameObject.Find("PutinButton").GetComponent<Button>().interactable = false;
-            GameObject.Find("WallButton").GetComponent<Button>().interactable = false;
 
             alpha += 0.01f;
             Color color = new Vector4(0, 0, 0, alpha);

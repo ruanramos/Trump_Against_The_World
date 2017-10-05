@@ -34,8 +34,11 @@ public class AmericaScript : MonoBehaviour {
         if (Time.time - collisionTime >= 3)
         {
             buttonsDisabled = false;
+            GameObject.Find("button wall").GetComponent<CircleCollider2D>().enabled = true;
             putinButton.GetComponent<Button>().interactable = true;
-            wallButton.GetComponent<Button>().interactable = true;
+            ColorBlock cb = putinButton.GetComponent<Button>().colors;
+            cb.disabledColor = new Vector4(200 / 255f, 200 / 255f, 200 / 255f, 128 / 255f);
+            putinButton.GetComponent<Button>().colors = cb;
         }
     }
 
@@ -60,7 +63,11 @@ public class AmericaScript : MonoBehaviour {
             collisionTime = Time.time;
             buttonsDisabled = true;
             putinButton.GetComponent<Button>().interactable = false;
-            wallButton.GetComponent<Button>().interactable = false;
+            ColorBlock cb = putinButton.GetComponent<Button>().colors;
+            cb.disabledColor = new Vector4(1, 60/255f, 60/255f, 1);
+            putinButton.GetComponent<Button>().colors = cb;
+            GameObject.Find("button wall").GetComponent<CircleCollider2D>().enabled = false;
+            GameObject.Find("button wall").GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
             collision.GetComponent<SpriteRenderer>().sprite = collision.GetComponent<ObamaScript>().obamaSprites[1];
             if (!trump.GetComponent<TrumpScript>().putinPlaying)
             {

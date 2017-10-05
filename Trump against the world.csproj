@@ -81,29 +81,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AudiosScript.cs" />
-    <Compile Include="Assets\Scripts\ButtonsScript.cs" />
+    <Compile Include="Assets\BuildWallScript.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
-    <Compile Include="Assets\Scripts\FadingScript.cs" />
-    <Compile Include="Assets\Scripts\KimScript.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\AmericaScript.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\AmericanMan.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\GameControllerScript.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\MexicanFastScript.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\MexicanGuitarScript.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\SpawnnerScript.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\TrumpScript.cs" />
-    <Compile Include="Assets\Scripts\Level Scripts\WallScript.cs" />
-    <Compile Include="Assets\Scripts\LoseSceneAudioScript.cs" />
-    <Compile Include="Assets\Scripts\LoseSceneScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\AmericaScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\AudiosScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\ButtonsScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\FadingScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\GameControllerScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\PutinScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\SpawnnerScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\TrumpScript.cs" />
+    <Compile Include="Assets\Scripts\EndlessLevelScripts\WallScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\AmericanMan.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\KimScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\MexicanFastScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\MexicanGuitarScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\MuslimWomanScript.cs" />
+    <Compile Include="Assets\Scripts\EnemyScripts\ObamaScript.cs" />
+    <Compile Include="Assets\Scripts\LoseSceneScripts\LoseSceneAudioScript.cs" />
+    <Compile Include="Assets\Scripts\LoseSceneScripts\LoseSceneScript.cs" />
     <Compile Include="Assets\Scripts\MenuMusicScript.cs" />
-    <Compile Include="Assets\Scripts\MuslimWomanScript.cs" />
-    <Compile Include="Assets\Scripts\ObamaScript.cs" />
-    <Compile Include="Assets\Scripts\PutinScript.cs" />
     <Compile Include="Assets\Scripts\SetHighScoreScript.cs" />
-    <Compile Include="Assets\Scripts\SwipeTrailScript.cs" />
-    <Compile Include="Assets\Scripts\TutorialCameraScript.cs" />
-    <Compile Include="Assets\Scripts\TutorialControllerScript.cs" />
+    <Compile Include="Assets\Scripts\TutorialSceneScripts\TutorialCameraScript.cs" />
+    <Compile Include="Assets\Scripts\TutorialSceneScripts\TutorialControllerScript.cs" />
     <Compile Include="Assets\Scripts\test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
