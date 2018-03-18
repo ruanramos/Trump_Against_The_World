@@ -44,6 +44,9 @@ public class ChangeScene : MonoBehaviour {
         {
             GameObject audios = GameObject.Find("Image1");
             audios.GetComponent<AudioSource>().Stop();
+            GameObject.Find("BotãoMenu").transform.Translate(30000, 0, 0);
+            GameObject.Find("BotãoNext").transform.Translate(30000, 0, 0);
+            GameObject.Find("BotãoBack").transform.Translate(30000, 0, 0);
         }
 
         StartCoroutine(LoadAsync(s));

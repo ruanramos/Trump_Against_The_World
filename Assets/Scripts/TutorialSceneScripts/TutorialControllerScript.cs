@@ -11,6 +11,10 @@ public class TutorialControllerScript : MonoBehaviour {
     GameObject cameraMain;
     Transform kimPosition;
 
+    GameObject cursor;
+    GameObject wall4;
+    GameObject wall;
+
     // Use this for initialization
     void Start () {
         nextButton = GameObject.Find("BotãoNext");
@@ -18,11 +22,16 @@ public class TutorialControllerScript : MonoBehaviour {
         menuButton = GameObject.Find("BotãoMenu");
         cameraMain = GameObject.Find("Main Camera");
         kimPosition = GameObject.Find("Kim").transform;
+
+        cursor = GameObject.Find("cursor-click");
+        wall4 = GameObject.Find("wall4");
+        wall = GameObject.Find("wall");
+        wall.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void FixedUpdate()
     {
-
+        // makes kim animation
         if (Camera.main.transform.position.x == 50)
         {
             kimPosition.transform.position += Vector3.down / 8;
@@ -40,7 +49,35 @@ public class TutorialControllerScript : MonoBehaviour {
             Screen.SetResolution(Screen.width, Screen.height, true);
         }
 
-        if (cameraMain.GetComponent<TutorialCameraScript>().position == 0)
+        // makes wall drag animation
+        if (Camera.main.transform.position.x == 20)
+        {
+            
+            wall4.transform.position = cursor.transform.position + new Vector3(0.5f, 0.5f, 0);
+            if (cursor.transform.position.x < 21 && cursor.transform.position.y > -3.15f)
+            {
+                wall4.GetComponent<SpriteRenderer>().enabled = true;
+                cursor.transform.position = cursor.transform.position + new Vector3(0.03f, -0.02f, 0);
+            }
+            else
+            {
+                cursor.GetComponent<SpriteRenderer>().enabled = false;
+                wall4.GetComponent<SpriteRenderer>().enabled = false;
+                wall.GetComponent<SpriteRenderer>().enabled = true;
+            }
+            
+        }
+
+        if(Camera.main.transform.position.x > 24 || Camera.main.transform.position.x < 16)
+        {
+            cursor.transform.position = new Vector3(18.027f, -0.91f, 0);
+            cursor.GetComponent<SpriteRenderer>().enabled = true;
+            wall4.transform.position = cursor.transform.position + new Vector3(0.5f, 0.5f, 0);
+            wall4.GetComponent<SpriteRenderer>().enabled = true;
+            wall.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+            if (cameraMain.GetComponent<TutorialCameraScript>().position == 0)
         {
             backButton.GetComponent<Button>().enabled = false;
             backButton.GetComponent<Button>().image.enabled = false;

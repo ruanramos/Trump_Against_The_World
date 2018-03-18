@@ -11,7 +11,7 @@ public class ButtonsScript : MonoBehaviour {
     GameObject america;
 
     // if changing, change on WallScript, ButtonsScript, GameControllerScript, TrumpScript
-    //public int putinCost = 2000;
+    //public int putinCost = 2500;
     //public int wallCost = 500;
 
     // Use this for initialization

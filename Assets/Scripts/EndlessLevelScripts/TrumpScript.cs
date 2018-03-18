@@ -27,7 +27,7 @@ public class TrumpScript : MonoBehaviour {
     public float delayPutin = 1.5f;
 
     // if changing, change on WallScript, ButtonsScript, GameControllerScript, TrumpScript
-    //public int putinCost = 2000;
+    //public int putinCost = 2500;
     //public int wallCost = 500;
 
 

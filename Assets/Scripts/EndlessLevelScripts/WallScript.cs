@@ -14,7 +14,7 @@ public class WallScript : MonoBehaviour {
     public bool shouldPlayQuoteAboutWall = false;
 
     // if changing, change on WallScript, ButtonsScript, GameControllerScript, TrumpScript
-    //public int putinCost = 2000;
+    //public int putinCost = 2500;
     //public int wallCost = 500;
 
     GameObject gameController;
@@ -52,7 +52,7 @@ public class WallScript : MonoBehaviour {
             shouldPlayQuoteAboutWall = true;
         }
 
-        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && !wallPositioned && transform.position.y < -2.5f)
+        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && !wallPositioned && transform.position.y < -2.3f)
         {
             Destroy(this.gameObject);
         }

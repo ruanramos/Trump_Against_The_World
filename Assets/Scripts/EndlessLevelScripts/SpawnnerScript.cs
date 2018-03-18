@@ -11,7 +11,6 @@ public class SpawnnerScript : MonoBehaviour {
     public bool shouldSpawn = false;
     public int score;
 
-    public float[] timeOfSpawnOnLevels = {2f, 1.9f, 1.8f, 1.7f, 1.6f, 1.5f, 1.4f, 1.3f, 1.2f, 1.1f, 1.0f, 0.9f, 0.8f, 0.7f, 0.6f};
 
     public GameObject prefabFastEnemy;
     public GameObject prefabGuitarEnemy;
@@ -62,10 +61,11 @@ public class SpawnnerScript : MonoBehaviour {
         else
         {
 
-            // time between spawns
+            // time between spawns. I made this function to make the difficulty not exponencial
 
-            if (time >= 1.5 * Mathf.Pow(0.9f, level))
+            if (time >= 0.8f - Mathf.Log(level, 10) / 3)
             {
+                Debug.Log(0.8f - Mathf.Log(level, 10) / 3);
                 shouldSpawn = true;
                 time = 0;
             }
